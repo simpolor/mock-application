@@ -1,0 +1,28 @@
+# 설치할 자바 버전 확인
+> yum list java*jdk-devel
+
+# 자바 설치
+> sudo yum install java-1.8.0-openjdk-devel.x86_64
+> javac -version
+
+# 메이븐 설치
+> sudo yum install maven
+> mvn -version
+--- 버전 문제로 아래 설치
+> yum -y install wget ( 미설치시 wget 설치 )
+> cd /usr/local ( 설치할 위치로 이동 )
+> $ wget http://mirror.apache-kr.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz ( 최신버전의 메이븐 다운로드 )
+> tar -zxvf apache-maven-3.6.3-bin.tar.gz ( 압축 해제 )
+> ln -s apache-maven-3.6.3 maven ( 실볼릭 링크 등록 )
+> vi ~/.bash_profile ( 환경변수 설정 )
+| export MAVEN_HOME=/usr/local/maven
+| PATH=$PATH:$HOME/bin:$MAVEN_HOME/bin
+| export PATH
+> source ~/.bash_profile
+
+# 깃 설치
+> sudo yum install git
+> git --version
+
+# 깃허브 프로젝트 가져오기
+> git clone https://github.com/simpolor/mock-application.git
